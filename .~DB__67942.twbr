@@ -361,7 +361,7 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
-      <column datatype='string' name='[City]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
       <_.fcp.ObjectModelTableType.true...column caption='supermarket_sales - Sheet1' datatype='table' name='[__tableau_internal_object_id__].[supermarket!sales - Sheet1_8EA09ABF427341309C4ED34B42560115]' role='measure' type='quantitative' />
       <column caption='Cogs' datatype='real' name='[cogs]' role='measure' type='quantitative' />
       <column caption='Gross Income' datatype='real' name='[gross income]' role='measure' type='quantitative' />
@@ -1032,26 +1032,33 @@
     <worksheet name='Sheet 8'>
       <table>
         <view>
-          <datasources>
-            <datasource caption='supermarket_sales - Sheet1 (sales)' name='federated.1x34hpj1e4qc9y1gief750kzdmn3' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1x34hpj1e4qc9y1gief750kzdmn3'>
-            <column datatype='real' name='[Unit price]' role='measure' type='quantitative' />
-            <column-instance column='[Unit price]' derivation='Sum' name='[sum:Unit price:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
+          <datasources />
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Automatic' />
+            <mark class='Multipolygon' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows />
-        <cols>[federated.1x34hpj1e4qc9y1gief750kzdmn3].[sum:Unit price:qk]</cols>
+        <cols />
       </table>
       <simple-id uuid='{61FBF414-E0F1-4301-94F1-3D9F5304C101}' />
     </worksheet>
@@ -1225,7 +1232,7 @@
       </cards>
       <simple-id uuid='{21D30F11-66CF-4819-969E-2F203495DA5D}' />
     </window>
-    <window class='worksheet' name='Sheet 7'>
+    <window class='worksheet' maximized='true' name='Sheet 7'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1253,7 +1260,7 @@
       </cards>
       <simple-id uuid='{C186574B-6FDF-4260-8E46-33907F0D1F3D}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 8'>
+    <window class='worksheet' name='Sheet 8'>
       <cards>
         <edge name='left'>
           <strip size='160'>
