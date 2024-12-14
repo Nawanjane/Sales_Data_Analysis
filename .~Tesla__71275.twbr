@@ -442,7 +442,7 @@
         </panes>
         <rows>[federated.1oki8zm083vajc1ekylbz1llm2nu].[fVal:sum:Gross Profit:qk]</rows>
         <cols>[federated.1oki8zm083vajc1ekylbz1llm2nu].[tmn:Date:qk]</cols>
-        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+        <forecast-specification auto-forecast-agg='false' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' forecast-agg='Month-Trunc' ignore-last='1' model-type='auto' range-periods='Quarter-Trunc' range-size='1' range-type='next' show-prediction-bands='true' />
       </table>
       <simple-id uuid='{58DE79A2-1055-448E-826D-E224B19A4DFC}' />
     </worksheet>
@@ -476,8 +476,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1oki8zm083vajc1ekylbz1llm2nu].[Longitude (generated)]' field-type='quantitative' max='50050478.961438522' min='9155971.2419153191' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1oki8zm083vajc1ekylbz1llm2nu].[Latitude (generated)]' field-type='quantitative' max='14705962.291643664' min='-8340254.346618521' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1oki8zm083vajc1ekylbz1llm2nu].[Longitude (generated)]' field-type='quantitative' max='44623394.760472417' min='26592667.577922504' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1oki8zm083vajc1ekylbz1llm2nu].[Latitude (generated)]' field-type='quantitative' max='8753676.1470036991' min='-1407591.6605084436' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='cell'>
             <format attr='text-format' field='[federated.1oki8zm083vajc1ekylbz1llm2nu].[sum:Price:qk]' value='n#,##0,,,.00B;-#,##0,,,.00B' />
@@ -792,26 +792,6 @@
       </table>
       <simple-id uuid='{BB47B01B-697D-4FCB-A5F1-2212CC55BFF9}' />
     </worksheet>
-    <worksheet name='Sheet 7'>
-      <table>
-        <view>
-          <datasources />
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-        </panes>
-        <rows />
-        <cols />
-      </table>
-      <simple-id uuid='{846FC1E2-EFCA-4E46-998E-5A8A5A74A10E}' />
-    </worksheet>
     <worksheet name='Sheet 8'>
       <layout-options>
         <title>
@@ -857,6 +837,7 @@
               <color column='[federated.1oki8zm083vajc1ekylbz1llm2nu].[none:Country:nk]' />
               <color column='[federated.1oki8zm083vajc1ekylbz1llm2nu].[none:Forecast Indicator:nk]' />
             </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='true' y-axis='true' />
             <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
           </pane>
         </panes>
@@ -1252,7 +1233,7 @@
       <simple-id uuid='{27AFA81B-2C2C-470B-B5F2-858A24391549}' />
     </dashboard>
   </dashboards>
-  <windows source-height='30'>
+  <windows pres-mode='true' source-height='30'>
     <window class='worksheet' name='Sheet 2'>
       <cards>
         <edge name='left'>
@@ -1427,30 +1408,7 @@
       </cards>
       <simple-id uuid='{F2B2A6E3-BC99-4AAF-B2F1-5023989AF3D5}' />
     </window>
-    <window class='worksheet' name='Sheet 7'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{2CE7EAC8-AA8E-4E8E-AE1E-90C5768BC15E}' />
-    </window>
-    <window class='worksheet' maximized='true' name='Sheet 8'>
+    <window class='worksheet' name='Sheet 8'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1478,7 +1436,7 @@
       </cards>
       <simple-id uuid='{ECC4670F-2F79-4CCC-8138-8952DBB7C15F}' />
     </window>
-    <window class='dashboard' name='Dashboard 1'>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
       <viewpoints>
         <viewpoint name='Sheet 1'>
           <zoom type='entire-view' />
